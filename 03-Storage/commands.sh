@@ -23,7 +23,6 @@ aws s3 cp factbook.csv s3://$bucket/other/factbook.tst
 
 cd lambda
 
-nom install -g serverless
 npm install serverless-pseudo-parameters
 
 sls deploy
@@ -60,7 +59,7 @@ aws configure set default.s3.multipart_chunksize 16MB
 cd ~/environment
 mkdir s3-performance
 cd s3-performance
-export bucket=teste-performance-s3-pan
+export bucket=base-config-<SEU RM>
 
 dd if=/dev/zero of=5GB.file count=5120 bs=1M
 time aws s3 cp 5GB.file s3://${bucket}/upload1.test    
