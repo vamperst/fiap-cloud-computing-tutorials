@@ -11,15 +11,7 @@ provider:
   region: 'us-east-1'
   memorySize: 128
   iam:
-    role:
-      statements:
-        - Effect: 'Allow'
-          Action:
-            - 's3:GetObject'
-            - 's3:ListBucket'
-          Resource:
-            - arn:aws:s3:::${self:custom.bucket}/factbook/*
-            - arn:aws:s3:::${self:custom.bucket}/factbook
+    role: arn:aws:iam::${AWS::AccountId}:role/LabRole
             
 
 functions:
