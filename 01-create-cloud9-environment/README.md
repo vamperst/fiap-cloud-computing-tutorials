@@ -21,10 +21,11 @@
 10. Execute o comando `npm install -g serverless` para instalar o serverless framework.
     ![img/installserverless.png](img/installserverless.png)
 11. Execute o comando `sudo apt  install jq -y` para instalar o software que irá nos ajudar a ler e manipular Jsons no terminal
-12. Execute o comando `git clone https://github.com/vamperst/fiap-cloud-computing-tutorials.git` para clonar o repositório com os exercicios.
-13. Execute o comando `cd fiap-cloud-computing-tutorials/` para entrar na pasta criada pelo git
-14. Execute o comando `cd 01-create-cloud9-environment` para entrar na pasta com os scripts de Configuração.
-15. Precisamos aumentar o tamanho do volume(HD) do cloud9. Para isso execute o comando  `sh resize.sh`
+12. Execute o comando `npm install -g c9` para baixar a extenãp que ajudará o Cloud9 a lidar melhor com o como abrir arquivos no IDE.
+13. Execute o comando `git clone https://github.com/vamperst/fiap-cloud-computing-tutorials.git` para clonar o repositório com os exercicios.
+14. Execute o comando `cd fiap-cloud-computing-tutorials/` para entrar na pasta criada pelo git
+15. Execute o comando `cd 01-create-cloud9-environment` para entrar na pasta com os scripts de Configuração.
+16. Precisamos aumentar o tamanho do volume(HD) do cloud9. Para isso execute o comando  `sh resize.sh`
    ![img/resizeEBS](img/resizeEBS.png)
 16. Para facilitar a criação e updates manualmente das stacks do cloudformation vamos utilizar o plugin 'cfn-create-or-update'. Para instalr utilize o comando `npm install -g cfn-create-or-update`
 17. Para instalar o docker execute o comando `curl -sSL https://get.docker.com/ | sudo sh`
@@ -34,13 +35,11 @@
     ![](img/s3CreateBucket.png)
 21. De o nome do bucket de `base-config-<SEU RM>` e clique em `Criar`.
     ![](img/createBucket.png)
-22. Devolta para a linha de comando do CLoud 9. Execute o comando para criar a chave ssh que será utilizada em todos os exercicios e já coloca-la no lugar correto.
-   ```
-    aws --region us-east-1 ec2 \
-    create-key-pair \
-    --key-name "fiap-lab" \
-    | \
-    jq -r ".KeyMaterial" > ~/.ssh/fiap-lab.pem   
-   ```
-24. Execute o comando `chmod 400 ~/.ssh/fiap-lab.pem` para que a chave tenha a permissão correta.
-25. Execute o comando `aws s3 cp ~/.ssh/fiap-lab.pem s3://base-config-<SEU RM>/instance-need/keys/` para copiar a chave que criou para o seu bucket de configurações do S3.
+22. Em outra aba do AWS Academy onde acessa a conta da AWS e no canto superior direito clique em 'AWS Details' e clique em 'show' nos campos de SSH Key.
+![](img/academy-pem-1.png)
+23. Copie o conteudo da chave privada para a area de transferência(Ctrl+C).
+    ![](img/academy-pem-2.png)
+24. Execute o comando `c9 open ~/.ssh/labsuser.pem` para criar o arquivo que utilizaremos como chave para entrar nas instancias. 
+25. Cole o conteudo da chave privada copiado nos passos anteriores e cole no ide no aquivo labsuser.json e salve utilizando "ctrl+S".
+26.  Execute o comando `chmod 400 ~/.ssh/labsuser.pem` para que a chave tenha a permissão correta.
+27.  Execute o comando `aws s3 cp ~/.ssh/labsuser.pem s3://base-config-<SEU RM>/instance-need/keys/` para copiar a chave que criou para o seu bucket de configurações do S3.
