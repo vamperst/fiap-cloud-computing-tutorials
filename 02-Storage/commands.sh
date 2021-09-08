@@ -1,6 +1,6 @@
 cd ~/environment/fiap-cloud-computing-tutorials/
 git pull origin master
-cd 03-Storage/
+cd 02-Storage/
 
 export bucket=base-config-<SEU RM>
 
