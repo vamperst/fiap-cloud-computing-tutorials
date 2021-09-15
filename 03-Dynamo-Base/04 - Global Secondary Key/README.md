@@ -5,13 +5,12 @@
 ![img/globalsecondarykey-1.png](img/globalsecondarykey-1.png)
 3. Preencha como a imagem, e clique em 'Create Index'. Esse processo pode demorar.
 ![img/globalsecondarykey-2.png](img/globalsecondarykey-2.png)
-4. Altere o arquivo 'dynamo.py' para que fique como na foto
-![img/globalsecondarykey-3.png](img/globalsecondarykey-3.png)
-5. Execute o arquivo com o comando `python3 dynamo.py`
+4. De volta ao cloud9 acesse a pasta com os scripts a serem utilizados: `cd ~/environment/fiap-cloud-computing-tutorials/03-Dynamo-Base`
+5. Abra o arquivo dynamo-GSI-1.py no IDE com o comando `c9 open dynamo-GSI-1.py`
+![img/gsi1.png](img/gsi1.png)
+6. Esse script irá popular de maneira randomica combinações dos objetos das listas users,stores e books. Execute o arquivo com o comando `python3 dynamo-GSI-1.py`
 ![img/globalsecondarykey-4.png](img/globalsecondarykey-4.png)
-6. Altere o arquivo 'dynamo.py' para que fique como na foto, escolhendo um invervalo valido de um segundo para o usuario pesquisado
-![img/globalsecondarykey-5.png](img/globalsecondarykey-5.png)
-7. Execute o arquivo com o comando `python3 dynamo.py`
-8. Altere o arquivo 'dynamo.py' para que fique como na foto, escolhendo um invervalo valido de um segundo para a loja pesquisado
+7. Abra o arquivo dynamo-GSI-2.py no IDE com o comando `c9 open dynamo-GSI-2.py`
+8. Altere o arquivo 'dynamo-GSI-2.py' para que fique como na imagem, escolhendo um invervalo valido de um segundo para o usuario pesquisado
 ![img/globalsecondarykey-6.png](img/globalsecondarykey-6.png)
-9. Execute o arquivo com o comando `python3 dynamo.py`
+9. O script vai pesquisar na global secondary key 'store-datetime-index' criada os dados. Execute o arquivo com o comando `python3 dynamo-GSI-2.py`
