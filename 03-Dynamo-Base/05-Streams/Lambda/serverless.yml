@@ -15,7 +15,7 @@ functions:
     events:
       - stream:
           type: dynamodb
-          arn: arn:aws:dynamodb:us-east-1:200881451636:table/sell_gsi/stream/2021-09-15T20:45:24.652
+          arn: ARN-DYNAMODB-STREAM
           batchSize: 1
           maximumRetryAttempts: 10
           enabled: true
