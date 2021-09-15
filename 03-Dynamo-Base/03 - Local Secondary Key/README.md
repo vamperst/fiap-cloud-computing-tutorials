@@ -15,3 +15,6 @@
 8. Escolha um usuario e um range de um segundo para executar o arquivo 'dynamo-LCI-2.py' como no exemplo.
 ![img/localsecondaryindex07.png](img/localsecondaryindex07.png)
 9. Note que o script esta fazendo uma query no indice 'user-store-index' criado na tabela anteriormente.Execute o comando `python3 dynamo-LCI-2.py`
+
+### Docuemntação
+[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LSI.html](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LSI.html)

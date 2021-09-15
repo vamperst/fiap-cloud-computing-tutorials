@@ -23,3 +23,6 @@
 1.  Execute o arquivo com `python3 dynamo-SK-4.py`
 2.  No painel do dynamoDB vá até a aba 'Items' e execute uma query como a que fez utilizando python, porem adicionando book como filtro
 ![alt](img/rangekey07.png)
+
+### Documentação
+[https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html)

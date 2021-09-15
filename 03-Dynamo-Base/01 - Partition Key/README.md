@@ -17,3 +17,6 @@
 8. Esse script também vai inserir 3 itens na tabela, porém com PKs diferentes. `python3 dynamo-PK-2.py`
 9. Agora a tabela book tem 3 registros, cada um com seu atributo
 ![img/partitionkey06.png](img/partitionkey06.png)
+
+### Documentação
+[https://aws.amazon.com/pt/blogs/database/choosing-the-right-dynamodb-partition-key/](https://aws.amazon.com/pt/blogs/database/choosing-the-right-dynamodb-partition-key/)

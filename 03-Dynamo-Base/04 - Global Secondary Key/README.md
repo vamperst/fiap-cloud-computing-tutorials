@@ -14,3 +14,7 @@
 8. Altere o arquivo 'dynamo-GSI-2.py' para que fique como na imagem, escolhendo um invervalo valido de um segundo para o usuario pesquisado
 ![img/globalsecondarykey-6.png](img/globalsecondarykey-6.png)
 9. O script vai pesquisar na global secondary key 'store-datetime-index' criada os dados. Execute o arquivo com o comando `python3 dynamo-GSI-2.py`
+    
+
+### Documentação
+[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html)
