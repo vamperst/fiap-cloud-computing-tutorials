@@ -1,6 +1,6 @@
 # 03.4 - Global Secondary Key
 
-1. Crie uma table chamada sell_gsi
+1. Crie uma table chamada 'sell_gsi' utilizando 'user' como PK e 'datetime' como SK.
 2. Nessa tabela vá até a aba 'Indexes', e clique em 'Create Index'.
 ![img/globalsecondarykey-1.png](img/globalsecondarykey-1.png)
 3. Preencha como a imagem, e clique em 'Create Index'. Esse processo pode demorar.
