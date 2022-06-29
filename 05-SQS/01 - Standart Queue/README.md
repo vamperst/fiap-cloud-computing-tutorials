@@ -6,6 +6,8 @@
 2. Copie a URL da sua fila que esta disposta conforme imagem:
     ![](img/sqs02.png)
 ### Enviando dados para a fila
+
+1. Para atualizar seu repositório do github execute o comando `cd ~/environment/fiap-cloud-computing-tutorials && git pull origin master`
 1. No terminal do IDE criado no cloud9 execute o comando `cd ~/environment/fiap-cloud-computing-tutorials/05-SQS/01\ -\ Standart\ Queue/` para entrar na pasta que fara este exercicio.
 2. Abra o arquivo put.py com o comando `c9 open put.py`
 3. Altere o arquivo put.py adicionando a URL da fila do sqs que criou nos passos anteriores
