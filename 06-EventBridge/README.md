@@ -2,10 +2,10 @@
 
 1. No terminal do IDE criado no cloud9 execute o comando `cd ~/environment/fiap-cloud-computing-tutorials/06-EventBridge/` para entrar na pasta que fara este exercicio.
 2. Utilize virtualenv para esse exercicio com os comandos:
-   ``` shell
-      python3 -m venv ~/venv 
-      source ~/venv/bin/activate
-   ```
+``` shell
+python3 -m venv ~/venv 
+source ~/venv/bin/activate
+```
 3. Em uma nova aba do console aws entre no serviço 'EventBridge'
 4. Do lado esquerdo da tela clique em `Barramento de eventos`
 5. No canto direito inferior da tela clique em `Criar barramento de eventos` 
@@ -17,18 +17,17 @@
    ![alt](img/eb3.png)
 9. Na página de criação da regra adicione o seguinte na seção Nome e Descrição:
    1. Nome: `OrdersDevRule`
-   2. Descrição: `Catchall rule for development purposes`
+   2. Descrição: `Catch all rule for development purposes`
    ![alt](img/eb4.png)
 10. Na seção Definir Padrão adicione o seguinte:
-    1. Selecione `Padrão de evento`
-    2. Em `Padrão de correspondência de eventos` escolha `Padrão predefinido por serviço`
-    3. Em `Provedor de serviços` selecione `Todos os evento`
+    1. Selecione `Todos os eventos`
+    2. Clique em `Próximo`
    ![alt](img/eb5.png)
-11. Em `Selecionar barramento de eventos` certifique de que `Orders` esta selecionado.
-12. Na seção `Selecionar destinos` adicione o seguinte:
+11. Na seção `Selecionar destinos` adicione o seguinte:
     1. Em `Destino` escolha `Grupo de logs do Cloudwatch`
-    2. Em `Grupo de logs` coloque o valor `/aws/event/orders`
+    2. Em `Grupo de logs` coloque o valor `orders`
    ![alt](img/eb6.png)
+12. Certifique-se de que o barramento `Orders` esta selectionado na página de revisão.   
 13. Clique em `Criar` ao final da página.
 14. Hora de testar a regra criada. Para tal, retorne ao Cloud9.
 15. Abra o arquivo putEvents.py com o comando `c9 open putEvents.py`
@@ -36,7 +35,7 @@
 17. Altere o arquivo para que fique como na imagem abaixo, não esqueça de salvar:
    ![alt](img/code1.png)
 18. No terminal execute o comando `python3 putEvents.py` para enviar 10 eventos para o barramento.
-19. Para conferir a regra funcionando vá para o painel do cloudwatch utilizando o link: [Cloudwatch Logs](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logsV2:log-groups/log-group/$252Faws$252Fevents$252Forders)
+19. Para conferir a regra funcionando vá para o painel do cloudwatch utilizando o link: [Cloudwatch Logs](https://us-east-1.console.aws.amazon.com/cloudwatch/home?region=us-east-1#logsV2:log-groups/log-group/$252Faws$252Fevents$252Forders)
 20. Caso tudo tenha corrido corretamente terão alguns streamings como na imagem abaixo:
     ![alt](img/eb7.png)
 21. Clique em um dos streamings para ver o evento enviado.
@@ -46,14 +45,14 @@
 cd ~/environment/fiap-cloud-computing-tutorials/06-EventBridge/lambda
 c9 open serverless.yml
 ```
-23. <strong>Adicione</strong> as 2 funções lambda conforme na imagem abaixo o serverless.yml aberto no passo anterior. A função `source` captura todos os eventos que tem o source = `com.aws.orders`, já a segunda função, `detail`, captura todos os eventos do mesmo source e adiciona os filtros por tipo de detalhe e localização.
+1.  <strong>Adicione</strong> as 2 funções lambda conforme na imagem abaixo o serverless.yml aberto no passo anterior. A função `source` captura todos os eventos que tem o source = `com.aws.orders`, já a segunda função, `detail`, captura todos os eventos do mesmo source e adiciona os filtros por tipo de detalhe e localização.
     ![alt](img/code2.png)
-24. No terminal execute o comando `sls deploy --verbose` para fazer o deploy das funções e criar as regras no eventBridge. A opção --verbose no comando é para visualizar os passos executados pelo cloudformation durante o deploy.
-25. Publique eventos no barramento utilizando localizações diferentes utilizando o arquivo `putRandomEvents.py`. Para tal execute os comandos abaixo:
+2.  No terminal execute o comando `sls deploy --verbose` para fazer o deploy das funções e criar as regras no eventBridge. A opção --verbose no comando é para visualizar os passos executados pelo cloudformation durante o deploy.
+3.  Publique eventos no barramento utilizando localizações diferentes utilizando o arquivo `putRandomEvents.py`. Para tal execute os comandos abaixo:
 ``` shell
 cd ~/environment/fiap-cloud-computing-tutorials/06-EventBridge/
 python3 putRandomEvents.py
 ```
-26. Verifique os logs dos lambdas nos seguintes links:
+1.  Verifique os logs dos lambdas nos seguintes links:
 - [source](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logsV2:log-groups/log-group/$252Faws$252Flambda$252Fevent-filter-dev-source)
 - [detail](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logsV2:log-groups/log-group/$252Faws$252Flambda$252Fevent-filter-dev-detail)
