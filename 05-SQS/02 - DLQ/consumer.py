@@ -1,5 +1,8 @@
 from sqsHandler import SqsHandler
+import time
+
 sqs = SqsHandler('<url da sua fila>')
+
 
 while(True):
     response = sqs.getMessage(10)
