@@ -12,7 +12,7 @@
 
 ### Enviando dados para a fila
 
-1. No terminal do CLoud 9 IDE criado no cloud9 execute o comando `cd ~/environment/fiap-serverless-architecture-tutorials/05-SQS/01\ -\ Standard\ Queue/` para entrar na pasta que fara este exercicio.
+1. No terminal do CLoud 9 IDE criado no cloud9 execute o comando `cd ~/environment/fiap-cloud-computing-tutorials/05-SQS/01\ -\ Standard\ Queue/` para entrar na pasta que fara este exercicio.
 2. Abra o arquivo put.py com o comando `c9 open put.py`
 3. Altere o arquivo put.py adicionando a URL da fila do sqs que criou nos passos anteriores
 
