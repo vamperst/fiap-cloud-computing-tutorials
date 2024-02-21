@@ -1,43 +1,19 @@
 import boto3
-import json
-import datetime
-
 import random
 
-clientes = ['rafael','maria','teresa', 'tatiane', 'murilo']
-statusPossiveis = ['pedido feito','montando', 'no forno','saiu do forno', 'embalando','pronto']
 
-peeker = random.SystemRandom()
+bucket_name = 'your-bucket-name'
+folder_names = ['em-preparacao', 'pronto']
 
-eventBridge = boto3.client('events')
-
-def put_events(eventBus, source, detailType, detail):
-    response = eventBridge.put_events(
-        Entries=[
-            {
-                'Time': datetime.datetime.now(),
-                'Source': source,
-                'DetailType': detailType,
-                'Detail': json.dumps(detail),
-                'EventBusName': eventBus,
-            }
-        ]
-    )
-    print("EventBridge Response: {}".format(json.dumps(response)))
+def upload_random_file_to_s3():
+    s3_client = boto3.client('s3')
+    file = f"{random.randint(1, 1000)}"
     
-def makeEvent(status, pedido, cliente):
-    eventBus="pizzaria"
-    source = "com.pizza.status"
-    detailType = "Alteracao Pizza"
-    detail = {
-      "status": status,
-      "pedido": pedido,
-      "cliente": cliente
-    }
-    put_events(eventBus, source, detailType, detail)
+    for folder in folder_names:
+        file_name = f"{folder}/{file}"
+        file_content = f"This is a test content for {file_name}"
+        s3_client.put_object(Bucket=bucket_name, Key=file_name, Body=file_content)
+        print(f"File {file_name} uploaded successfully to {bucket_name}")
 
-for i in range(100):
-   cliente = peeker.choice(clientes)
-   
-   for status in statusPossiveis:
-       makeEvent(status, i, cliente)
+for i in range(10):
+    upload_random_file_to_s3()
