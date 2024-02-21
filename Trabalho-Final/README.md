@@ -38,9 +38,12 @@ Quando um arquivo de pedido é colocado na pasta `em-preparacao/`, um evento é 
 ### Informações e dicas
 
 1. Pode escolher qualquer linguagem suportada pelo lambda para resolver o exercicio. Todos os exemplos estão em python3
-2. Para utilizar o arquivo de testes altere a variável `bucket_name` para o nome do seu bucket.
-3. Para testar o seu exercicio esta disponibilizado nesta pasta um arquivo chamado putEventsPizzaria.py que irá inserir arquivos no bucket do S3. Para testar o seu exercicio basta executar este arquivo.
-4. Exemplo de item a ser inserido no DynamoDB:
+2. Para testar o seu exercicio esta disponibilizado nesta pasta um arquivo chamado putEventsPizzaria.py que irá inserir arquivos no bucket do S3. Para testar o seu exercicio basta executar este arquivo.
+3. Para utilizar o arquivo de testes altere a variável `bucket_name` para o nome do seu bucket.
+4. Os nomes dos arquivos de teste já contem o pedido e o cliente, desse modo <b>Não</b> é necessário baixar o arquivo do S3 para pegar o pedido e o cliente. Exemplo de nome de arquivo:
+   1. em-preparacao/1234-rafael
+   2. pronto/1234-rafael
+5. Exemplo de item a ser inserido no DynamoDB:
    ``` json
    {
       "pedido": "1234",
@@ -49,8 +52,8 @@ Quando um arquivo de pedido é colocado na pasta `em-preparacao/`, um evento é 
       "status": "pronto"
    }
    ```
-5. Os códigos para inserir um item no DynamoDB e no SQS estão disponiveis no tutorial de cada tema.
-6. Exemplo de configuração para trigger do S3 no lambda:
+6. Os códigos para inserir um item no DynamoDB e no SQS estão disponiveis no tutorial de cada tema.
+7. Exemplo de configuração para trigger do S3 no lambda:
 ``` yaml
 functions:
   users:
