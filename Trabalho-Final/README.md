@@ -51,7 +51,7 @@ Quando um arquivo de pedido é colocado na pasta `em-preparacao/`, um evento é 
    }
    ```
 6. Os códigos para inserir um item no DynamoDB e no SQS estão disponiveis no tutorial de cada tema.
-7. Exemplo de configuração para trigger do S3 no lambda:
+7. Exemplo de configuração para trigger do S3 no lambda serverless framework. <b>O Bucket S3 será criado automaticamente pelo serverless framework</b>:
 ``` yaml
 functions:
   users:
@@ -66,5 +66,5 @@ functions:
           bucket: legacy-photos
           event: s3:ObjectCreated:*
           rules:
-            - prefix: uploads/
+            - prefix: downloads/
 ```
