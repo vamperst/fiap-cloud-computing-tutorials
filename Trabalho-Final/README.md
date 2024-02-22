@@ -11,17 +11,15 @@ Quando um arquivo de pedido é colocado na pasta `em-preparacao/`, um evento é 
 
 ### Passos
 
-1. Crie manualmente um novo Bucket S3, uma tabela DynamoDB e 2 filas SQS no console da AWS.
-   1. S3:
-      1. Nome = nome-unico-pizzaria (O nome tem que ser unico para conseguir criar o bucket)
-   2. DynamoDB:
+1. Crie manualmente uma tabela DynamoDB e 2 filas SQS no console da AWS.
+   1. DynamoDB:
       1. Chave de partição: pedido(String)
       2. Chave de pesquisa: datetime(String)
       3. Nome: pedidos-pizzaria
-   3. Fila SQS Em Preparação:
+   2. Fila SQS Em Preparação:
       1. Tipo: Standard
       2. Nome: em-preparacao-pizzaria
-   4. Fila SQS Pronto:
+   3. Fila SQS Pronto:
       1. Tipo: Standard
       2. Nome: pronto-pizzaria
 2. Crie via serverless framework o lambda que receberá os eventos do S3 e enviará as mensagens para as filas SQS.
@@ -64,5 +62,9 @@ functions:
           event: s3:ObjectCreated:*
           rules:
             - prefix: uploads/
-          existing: true
+      - s3:
+          bucket: legacy-photos
+          event: s3:ObjectCreated:*
+          rules:
+            - prefix: uploads/
 ```

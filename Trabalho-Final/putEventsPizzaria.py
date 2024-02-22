@@ -2,12 +2,14 @@ import boto3
 import random
 
 
-bucket_name = 'your-bucket-name'
+bucket_name = 'lab-conf-111'
 folder_names = ['em-preparacao', 'pronto']
+users = ['rafael','pedro','teresa','natalia', 'eduardo']
+peeker = random.SystemRandom()
 
 def upload_random_file_to_s3():
     s3_client = boto3.client('s3')
-    file = f"{random.randint(1, 1000)}"
+    file = f"{random.randint(1, 1000)}-{peeker.choice(users)}"
     
     for folder in folder_names:
         file_name = f"{folder}/{file}"
