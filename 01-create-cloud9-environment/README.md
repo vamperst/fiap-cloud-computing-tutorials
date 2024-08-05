@@ -71,7 +71,7 @@ seu IDE.
 
     ![img/bash.png](img/bash.png)
 
-1.  Execute o comando `npm install -g serverless` para instalar o serverless framework.
+1.  Execute o comando `npm i serverless@3.39.0 -g` para instalar o serverless framework.
     ![img/installserverless.png](img/installserverless.png)
 2.  Execute o comando `sudo apt update -y && sudo apt  install jq -y` para instalar o software que irá nos ajudar a ler e manipular Jsons no terminal
 3.  Execute o comando `npm install -g c9` para baixar a extenãp que ajudará o Cloud9 a lidar melhor com o como abrir arquivos no IDE.
