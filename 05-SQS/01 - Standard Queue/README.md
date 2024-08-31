@@ -24,7 +24,7 @@
    pip3 install virtualenv && python3 -m venv ~/venv
    source ~/venv/bin/activate
    pip3 install boto3
-   npm install -g serverless
+   npm i serverless@3.39.0 -g
    ```
 
 4. Execute o comando `python3 put.py` no terminal para colocar 3000 mensagens na fila. Verifique no [console](https://us-east-1.console.aws.amazon.com/sqs/v3/home?region=us-east-1#/queues) o resultado do comando.
