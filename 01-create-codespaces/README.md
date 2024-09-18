@@ -105,10 +105,10 @@ Você irá utilizar 2 ferramentas para desenvolver os laboratorios:
 
 8. Pronto! Seu ambiente está configurado e pronto para começar os laboratórios. 
 
-[!WARNING] 
-Esse passo de copiar as credenciais para o Codespaces é necessário para que você consiga executar os comandos da AWS. Caso você feche o Codespaces e abra novamente, você terá que repetir esse passo para copiar as credenciais novamente. Assim como no inicio de cada aula.
+> [!WARNING] 
+> Esse passo de copiar as credenciais para o Codespaces é necessário para que você consiga executar os comandos da AWS. Caso você feche o Codespaces e abra novamente, você terá que repetir esse passo para copiar as credenciais novamente. Assim como no inicio de cada aula.
 
-[!CAUTION]
-<b>SEMPRE DESLIGUE</b> o ambiente ao final de cada aula para não gerar custos extras ou acabar com suas horas gratis no Codespaces. Para desligar acesse o [link](https://github.com/codespaces) clique no 3 pontinhos ao lado do ambiente e clique em `Stop Codespace`.
+>[!CAUTION]
+> <b>SEMPRE DESLIGUE</b> o ambiente ao final de cada aula para não gerar custos extras ou acabar com suas horas gratis no Codespaces. Para desligar acesse o [link](https://github.com/codespaces) clique no 3 pontinhos ao lado do ambiente e clique em `Stop Codespace`.
 
 ![](img/codespaces10.png)
