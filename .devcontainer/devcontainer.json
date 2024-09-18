@@ -1,5 +1,5 @@
 {
-  "name": "FIAP Cloud Computing Tutorials",
+  "name": "FIAP Lab",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",  
   "features": {
     "ghcr.io/devcontainers/features/python:1": {
