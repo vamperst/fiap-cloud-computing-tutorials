@@ -1,5 +1,5 @@
 {
-  "name": "GitHub Codespace Dev Container",
+  "name": "FIAP Cloud Computing Tutorials",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",  
   "features": {
     "ghcr.io/devcontainers/features/python:1": {
