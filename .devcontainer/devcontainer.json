@@ -18,7 +18,9 @@
         "ms-python.python",
         "aws-scripting-guy.cform",
         "hashicorp.terraform",
-        "github.copilot"
+        "github.copilot",
+        "redhat.vscode-yaml",
+        "fradolph.serverless-snippets"
       ]
     }
   },
