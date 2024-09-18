@@ -1,6 +1,6 @@
 #!/bin/bash
 set -eux
 sudo apt-get update -y 
-sudo apt-get install -y jq 
 npm i serverless@3.39.0 -g
-sudo apt-get install awscli -y
+mkdir -p ~/.aws/
+cp /workspaces/fiap-cloud-computing-tutorials/.devcontainer/config ~/.aws/config
