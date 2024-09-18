@@ -22,7 +22,7 @@
       ]
     }
   },
-  "postCreateCommand": "npm i serverless@3.39.0 -g",
+  "postCreateCommand": "sudo apt-get update -y && sudo apt-get install -y jq && npm i serverless@3.39.0 -g",
   "settings": {
     "terminal.integrated.defaultProfile.linux": "bash"
   }
