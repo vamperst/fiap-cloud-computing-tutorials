@@ -22,20 +22,8 @@
       ]
     }
   },
-  "postCreateCommand": "chmod +x ./script.sh && ./script.sh",
+  "postCreateCommand": "chmod +x /workspaces/fiap-cloud-computing-tutorials/.devcontainer/script.sh && /workspaces/fiap-cloud-computing-tutorials/.devcontainer/script.sh",
   "settings": {
     "terminal.integrated.defaultProfile.linux": "bash"
-  },
-  "mounts": [
-    {
-      "source": "./script.sh",
-      "target": "/workspaces/script.sh",
-      "type": "bind"
-    },
-    {
-      "source": "./config",
-      "target": "~/.aws/credentials",
-      "type": "bind"
-    }
-  ]
+  }
 }
