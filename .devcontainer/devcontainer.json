@@ -22,7 +22,7 @@
       ]
     }
   },
-  "postCreateCommand": "chmod +x /workspaces/fiap-cloud-computing-tutorials/.devcontainer/script.sh && /workspaces/fiap-cloud-computing-tutorials/.devcontainer/script.sh",
+  "postCreateCommand": "chmod +x /workspaces/fiap-cloud-computing-tutorials/.devcontainer/script.sh && bash /workspaces/fiap-cloud-computing-tutorials/.devcontainer/script.sh",
   "settings": {
     "terminal.integrated.defaultProfile.linux": "bash"
   }
