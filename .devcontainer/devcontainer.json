@@ -22,8 +22,20 @@
       ]
     }
   },
-  "postCreateCommand": "sudo apt-get update -y && sudo apt-get install -y jq && npm i serverless@3.39.0 -g && sudo apt-get install awscli -y",
+  "postCreateCommand": "./script.sh",
   "settings": {
     "terminal.integrated.defaultProfile.linux": "bash"
-  }
+  },
+  "mounts": [
+    {
+      "source": "./script.sh",
+      "target": "/workspaces/script.sh",
+      "type": "bind"
+    },
+    {
+      "source": "./config",
+      "target": "~/.aws/credentials",
+      "type": "bind"
+    }
+  ]
 }
