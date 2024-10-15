@@ -1,0 +1,77 @@
+service: pizzaria
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  bucket: base-config-rm351725
+  prefix: pizzaria
+
+provider:
+  name: aws
+  runtime: python3.8
+  region: 'us-east-1'
+  memorySize: 128
+  iam:
+    role: arn:aws:iam::301080176247:role/LabRole
+  environment:
+    SQS_EM_PREPARACAO_URL: arn:aws:sqs:us-east-1:301080176247:em-preparacao-pizza
+    SQS_PRONTO_URL: arn:aws:sqs:us-east-1:301080176247:pronto-pizzaria
+    DYNAMODB_TABLE: pedidos-pizzaria
+
+functions:
+  sendToSqs:
+    handler: handler.send_to_sqs
+    events:
+      - s3:
+          bucket: ${self:custom.bucket}
+          event: s3:ObjectCreated:*
+          existing: True
+          rules:
+            - prefix: em-preparacao/
+      - s3:
+          bucket: ${self:custom.bucket}
+          event: s3:ObjectCreated:*
+          existing: True
+          rules:
+            - prefix: pronto/
+
+  inserirNoDynamoEmPreparacao:
+    handler: handler.insert_into_dynamodb
+    events:
+      - sqs:
+          arn: arn:aws:sqs:us-east-1:301080176247:em-preparacao-pizza
+
+  inserirNoDynamoPronto:
+    handler: handler.inserir_no_dynamodb
+    events:
+      - sqs:
+          arn: arn:aws:sqs:us-east-1:301080176247:pronto-pizzaria
+
+resources:
+  Resources:
+    EmPreparacaoQueue:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: em-preparacao-pizzaria
+
+    ProntoQueue:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: pronto-pizzaria
+
+    DynamoDBTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: pedidos-pizzaria
+        AttributeDefinitions:
+          - AttributeName: pedido
+            AttributeType: S
+          - AttributeName: datetime
+            AttributeType: S
+        KeySchema:
+          - AttributeName: pedido
+            KeyType: HASH
+          - AttributeName: datetime
+            KeyType: RANGE
+        BillingMode: PAY_PER_REQUEST
