@@ -61,13 +61,12 @@ A imagem exibida mostra um formulário para a criação de uma tabela no Amazon 
    - **Adicionar nova tag**: Botão que permite adicionar novas tags ao recurso.
    - **Criar tabela**: Botão para confirmar a criação da tabela com as configurações especificadas.
 
-Espero que essa explicação tenha esclarecido o propósito de cada campo no processo de criação de uma tabela no Amazon DynamoDB! 😊
 </blockquote>
 
 
-5. A tabela pode levar alguns minutos para ser criada. Aguarde.
-6. De volta ao cloud9 acesse a pasta com os scripts a serem utilizados: `cd ~/environment/fiap-cloud-computing-tutorials/03-Dynamo-Base`
-7. Abra o arquivo dynamo-PK-1.py utilizando o comando `c9 open dynamo-PK-1.py`
+1. A tabela pode levar alguns minutos para ser criada. Aguarde.
+2. De volta ao cloud9 acesse a pasta com os scripts a serem utilizados: `cd ~/environment/fiap-cloud-computing-tutorials/03-Dynamo-Base`
+3. Abra o arquivo dynamo-PK-1.py utilizando o comando `c9 open dynamo-PK-1.py`
 
 ![img/pk1.png](img/pk1.png)
 
@@ -223,10 +222,9 @@ Após a execução do código, a tabela **`book`** terá três itens distintos, 
 - Como cada chamada usa um valor único de `book_id`, três itens são criados, cada um com os atributos especificados.
 - A chave primária usada é `book_id`, o que garante a unicidade de cada item na tabela.
 
-Este exemplo demonstra uma maneira básica de inserir múltiplos itens distintos em uma tabela do DynamoDB utilizando a biblioteca Boto3 e uma classe personalizada `BaseDAO`.
 </blockquote>
 
-14.  Agora a tabela book tem 3 registros, cada um com seu atributo
+13.   Agora a tabela book tem 3 registros, cada um com seu atributo
 
 ![img/partitionkey06.png](img/partitionkey06.png)
 
