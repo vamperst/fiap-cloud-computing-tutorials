@@ -10,8 +10,8 @@
 
 ![img/rangekey01.png](img/rangekey01.png)
 
-1. De volta ao cloud9 acesse a pasta com os scripts a serem utilizados: `cd ~/environment/fiap-cloud-computing-tutorials/03-Dynamo-Base`
-2. Abra o arquivo dynamo-SK-1.py no IDE com o comando `c9 open dynamo-SK-1.py`
+4. De volta ao cloud9 acesse a pasta com os scripts a serem utilizados: `cd ~/environment/fiap-cloud-computing-tutorials/03-Dynamo-Base`
+5. Abra o arquivo dynamo-SK-1.py no IDE com o comando `c9 open dynamo-SK-1.py`
 
 ![img/rangekey02.png](img/rangekey02.png)
 
@@ -91,13 +91,13 @@ Exemplo de itens inseridos:
 Portanto, o resultado do código é que 100 itens aleatórios são inseridos na tabela `'sell'`, onde os valores de `'sell_id'`, `'datetime'`, e `'book'` são gerados dinamicamente.
 </blockquote>
 
-1. Esse script irá popular de maneira randomica combinações dos objetos das listas users e books. Execute o comando `python3 dynamo-SK-1.py`
-2. Agora sua tabela estará populada com 100 objetos. [Listar itens tabela sell](https://us-east-1.console.aws.amazon.com/dynamodbv2/home?region=us-east-1#item-explorer?maximize=true&operation=SCAN&table=sell)
+6. Esse script irá popular de maneira randomica combinações dos objetos das listas users e books. Execute o comando `python3 dynamo-SK-1.py`
+7. Agora sua tabela estará populada com 100 objetos. [Listar itens tabela sell](https://us-east-1.console.aws.amazon.com/dynamodbv2/home?region=us-east-1#item-explorer?maximize=true&operation=SCAN&table=sell)
 
 ![img/rangekey03.png](img/rangekey03.png)
 
-1. Abra o arquivo dynamo-SK-2.py no IDE com o comando `c9 open dynamo-SK-2.py`
-2. Escolha um dos datetimes e um dos nomes que constam na sua tabela sell e altere o arquivo 'dynamo-SK-2' para que fique como na imagem. Copie de valores da sua tabela, caso contrario não retornará nenhum valor. Não esqueça de salvar com ctrl+s
+8. Abra o arquivo dynamo-SK-2.py no IDE com o comando `c9 open dynamo-SK-2.py`
+9. Escolha um dos datetimes e um dos nomes que constam na sua tabela sell e altere o arquivo 'dynamo-SK-2' para que fique como na imagem. Copie de valores da sua tabela, caso contrario não retornará nenhum valor. Não esqueça de salvar com ctrl+s
 
 ![img/rangekey04.png](img/rangekey04.png)
 
@@ -180,9 +180,9 @@ print(json.dumps(items))
 
 </blockquote>
 
-1. Execute o arquivo com `python3 dynamo-SK-2.py`
-2. Abra o arquivo dynamo-SK-3.py no IDE com o comando `c9 open dynamo-SK-3.py`
-3. Escolha um intervalo de tempo em sua tabela e deixe seu arquivo 'dynamo-SK-3.py' como na imagem. Ao visualizar os dados na tabela do dynamo ordene por data para facilitar copiar 2 datas crescentes.
+10. Execute o arquivo com `python3 dynamo-SK-2.py`
+11. Abra o arquivo dynamo-SK-3.py no IDE com o comando `c9 open dynamo-SK-3.py`
+12. Escolha um intervalo de tempo em sua tabela e deixe seu arquivo 'dynamo-SK-3.py' como na imagem. Ao visualizar os dados na tabela do dynamo ordene por data para facilitar copiar 2 datas crescentes.
 
 ![img/rangekey05.png](img/rangekey05.png)
 
@@ -240,9 +240,9 @@ Este código busca itens na tabela **`sell`** com base em um intervalo de tempo 
 </blockquote>
 
 
-1.  Execute o arquivo com `python3 dynamo-SK-3.py`
-2.  Abra o arquivo dynamo-SK-4.py no IDE com o comando `c9 open dynamo-SK-4.py`
-3.  Escolha um nome e um intervalo de tempo que tenha registros e altere o arquivo 'dynamo-SK-4.py' como na imagem
+14.  Execute o arquivo com `python3 dynamo-SK-3.py`
+15.  Abra o arquivo dynamo-SK-4.py no IDE com o comando `c9 open dynamo-SK-4.py`
+16.  Escolha um nome e um intervalo de tempo que tenha registros e altere o arquivo 'dynamo-SK-4.py' como na imagem
 
 ![img/rangekey06.png](img/rangekey06.png)
 
@@ -315,8 +315,8 @@ O código faz uma consulta eficiente no DynamoDB, retornando itens da tabela **`
 
 </blockquote>
 
-1.  Execute o arquivo com `python3 dynamo-SK-4.py`
-2.  No [console do dynamodb](https://us-east-1.console.aws.amazon.com/dynamodbv2/home?region=us-east-1#item-explorer?maximize=true&operation=QUERY&table=sell) execute uma consulta com os mesmos parametros para comparar os resultados. Eles devem ser iguais aos do dynamo-SK-4.py.
+17.  Execute o arquivo com `python3 dynamo-SK-4.py`
+18.  No [console do dynamodb](https://us-east-1.console.aws.amazon.com/dynamodbv2/home?region=us-east-1#item-explorer?maximize=true&operation=QUERY&table=sell) execute uma consulta com os mesmos parametros para comparar os resultados. Eles devem ser iguais aos do dynamo-SK-4.py.
 
 ![alt](img/rangekey07.png)
 
