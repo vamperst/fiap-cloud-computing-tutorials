@@ -1,4 +1,4 @@
-# 03.2 - Range Key
+# 03.2 - Sort Key
 
 
 1. Acesse o [console do dynamoDB](https://us-east-1.console.aws.amazon.com/dynamodbv2/home?region=us-east-1#dashboard)
