@@ -35,8 +35,8 @@ Esse comando é ideal para iniciar rapidamente um projeto serverless na AWS util
 
 </blockquote>
 
-1. Abra o arquivo serverless.yml no IDE com o comando `c9 open serverless.yml`
-2. Altere o arquivo para que fique como na imagem abaixo. Para salvar utilize CTRL+S.
+4. Abra o arquivo serverless.yml no IDE com o comando `c9 open serverless.yml`
+5. Altere o arquivo para que fique como na imagem abaixo. Para salvar utilize CTRL+S.
    
    ![](img/yml1.png)
 
@@ -89,7 +89,7 @@ service: teste
 
 </blockquote>
 
-1. No terminal do IDE faça deploy da função criada com o comando `sls deploy --verbose`. Esse comando vai mostrar cada etapa sendo feita em detalhes, bem como o status do cloudformation criado.
+6. No terminal do IDE faça deploy da função criada com o comando `sls deploy --verbose`. Esse comando vai mostrar cada etapa sendo feita em detalhes, bem como o status do cloudformation criado.
  
   ![img/slsdeploy.png](img/slsdeploy.png)
 
@@ -267,7 +267,7 @@ Este código de função **AWS Lambda** está estruturado para ser facilmente in
 
 </blockquote>
 
-1.  Faça um teste local da sua função no terminal com o comando `sls invoke local -f hello` 
+9. Faça um teste local da sua função no terminal com o comando `sls invoke local -f hello` 
 
   ![img/slsinvokelocal.png](img/slsinvokelocal.png)
 
@@ -296,7 +296,7 @@ Em resumo, o comando **`sls invoke local -f hello`** executa a função Lambda n
 
 </blockquote>
 
-1. Para deletar a função que esta no lambda utilize o comando `sls remove`
+10. Para deletar a função que esta no lambda utilize o comando `sls remove`
 
   ![img/slsremove.png](img/slsremove.png)
 
