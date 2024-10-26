@@ -73,7 +73,7 @@ Para mais detalhes, consulte a [documentação oficial sobre DLQs do Amazon SQS]
 
 ![img/dlq-02-1.png](img/dlq-02-1.png)
 
-1. Altere o arquivo put.py colocando a URL da fila demoqueue nele, para abrir utilize `c9 open put.py` no terminal do cloud9. Para pegar a URL você pode entrar no console do SQS ou através do comando `aws sqs get-queue-url --queue-name demoqueue | jq .QueueUrl`
+5. Altere o arquivo put.py colocando a URL da fila demoqueue nele, para abrir utilize `c9 open put.py` no terminal do cloud9. Para pegar a URL você pode entrar no console do SQS ou através do comando `aws sqs get-queue-url --queue-name demoqueue | jq .QueueUrl`
 
 <details>
 <summary> 
@@ -208,8 +208,8 @@ Esse comando é útil quando você precisa da URL exata de uma fila SQS para us�
 
 </details>
 
-2. execute o comando `python3 put.py` no terminal
-3. Faça as alterações no arquivo consumer.py(`c9 open consumer.py`)conforme a imagem a baixo, não esquecendo de colcoar sua URL da demoqueue forneciada pelo comando anterior:
+6. execute o comando `python3 put.py` no terminal
+7. Faça as alterações no arquivo consumer.py(`c9 open consumer.py`)conforme a imagem a baixo, não esquecendo de colcoar sua URL da demoqueue forneciada pelo comando anterior:
 
 ![img/dlq-03.png](img/dlq-03.png)
 
@@ -281,7 +281,7 @@ Para mais informações sobre **DLQs** e **Visibility Timeout** no SQS, consulte
 
 </details>
 
-4. Execute o comando `python3 consumer.py` no terminal
-2. Observe que enquanto roda o script a fila DLQ é populada no console do SQS. [Link para painel SQS](https://console.aws.amazon.com/sqs/v2/home?region=us-east-1#/queues)
+8. Execute o comando `python3 consumer.py` no terminal
+9. Observe que enquanto roda o script a fila DLQ é populada no console do SQS. [Link para painel SQS](https://console.aws.amazon.com/sqs/v2/home?region=us-east-1#/queues)
     
     ![img/dlq-04.png](img/dlq-04.png)
