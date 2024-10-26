@@ -227,7 +227,7 @@ demoqueueURL=`aws sqs get-queue-url --queue-name demoqueue | jq -r .QueueUrl` &&
 
    ![at](img/lambda-03.png)
 
-6. Execute o comando abaixo para rodar a operação de purge na fila demoqueue:
+6. Execute o comando abaixo no terminal do Cloud9 para rodar a operação de purge na fila demoqueue:
 ``` shell
 aws sqs purge-queue --queue-url $(aws sqs get-queue-url --queue-name demoqueue --output text)
 ``` 
