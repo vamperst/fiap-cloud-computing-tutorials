@@ -10,6 +10,13 @@
 
 2. Deixe essa aba aberta, será necessária para um passo adiante.
 
+<details>
+<summary> 
+
+## Explicação
+
+</summary>
+
 <blockquote>
 
 # Interação com Filas Amazon SQS via URL
@@ -60,6 +67,8 @@ As URLs de filas Amazon SQS são componentes essenciais para identificar e inter
 
 </blockquote>
 
+</details>
+
 ### Enviando dados para a fila
 
 1. No terminal do CLoud 9 IDE criado no cloud9 execute o comando `cd ~/environment/fiap-cloud-computing-tutorials/05-SQS/01\ -\ Standard\ Queue/` para entrar na pasta que fara este exercicio.
@@ -84,6 +93,7 @@ As URLs de filas Amazon SQS são componentes essenciais para identificar e inter
 6. Execute o comando `python3 put.py` no terminal para colocar 3000 mensagens na fila. Verifique no [console](https://us-east-1.console.aws.amazon.com/sqs/v3/home?region=us-east-1#/queues) o resultado do comando.
 
 ![alt](img/sendtoqueue02.png)
+
 
 <details>
 <summary> 
