@@ -85,8 +85,8 @@ As URLs de filas Amazon SQS são componentes essenciais para identificar e inter
 
 ![alt](img/sendtoqueue02.png)
 
-<details open>
-<summary>Explicação</summary>
+<details>
+<summary> ## Explicação</summary>
 
 <blockquote>
 
