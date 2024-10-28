@@ -343,7 +343,7 @@ Este código permite um **processamento em lote** de mensagens entre duas filas 
 </details>
 
 14. rode o comando `sls deploy` no terminal para criar o lambda
-15. Para execução do lambda rode o comando `sls invoke -l -f sqsHandler` no terminal para invocar a função lambda récem criada que irá consumir as mensagens da fila e enviar para a fila de destino.
+15. Para execução do lambda rode o comando `sls invoke -l -f hello` no terminal para invocar a função lambda récem criada que irá consumir as mensagens da fila e enviar para a fila de destino.
 16. Enquando espera o comando terminar pode observar no painel do SQS as mensagens se movendo a cada atualização manual pelo canto direito superior. Lembre que cada execução move 1000 por definição no código. [Link para painel SQS](https://console.aws.amazon.com/sqs/v2/home?region=us-east-1#/queues)
     
     ![alt](img/lambda-02-1.png)
